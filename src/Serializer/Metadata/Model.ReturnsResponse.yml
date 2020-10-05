@@ -1,0 +1,6 @@
+Etrias\BolComConnector\Model\ReturnsResponse:
+  access_type: public_method
+  exclusion_policy: ALL
+  properties:
+    returns:
+      type: array<Etrias\BolComConnector\Model\Return_>

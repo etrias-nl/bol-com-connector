@@ -1,0 +1,26 @@
+Etrias\BolComConnector\Model\OrderItemDetail:
+  access_type: public_method
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: string
+      serialized_name: orderItemId
+    ean:
+      type: string
+    cancelRequest:
+      type: bool
+      serialized_name: cancelRequest
+    quantity:
+      type: int
+    title:
+      type: string
+    offerReference:
+      type: string
+      serialized_name: offerReference
+    offerPrice:
+      type: float
+      serialized_name: offerPrice
+    transactionFee:
+      type: float
+      serialized_name: transactionFee
+

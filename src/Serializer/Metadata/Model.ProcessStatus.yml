@@ -1,0 +1,8 @@
+Etrias\BolComConnector\Model\ProcessStatus:
+  access_type: public_method
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: int
+    status:
+      type: string

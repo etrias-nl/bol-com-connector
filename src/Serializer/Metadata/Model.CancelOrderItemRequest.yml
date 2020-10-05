@@ -1,0 +1,7 @@
+Etrias\BolComConnector\Model\CancelOrderItemRequest:
+  access_type: public_method
+  exclusion_policy: ALL
+  properties:
+    reasonCode:
+      type: string
+      serialized_name: reasonCode

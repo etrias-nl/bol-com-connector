@@ -1,0 +1,37 @@
+Etrias\BolComConnector\Model\BillingDetails:
+  access_type: public_method
+  exclusion_policy: ALL
+  properties:
+    salutationCode:
+      type: string
+      serialized_name: salutationCode
+    firstName:
+      type: string
+      serialized_name: firstName
+    surName:
+      type: string
+      serialized_name: surName
+    streetName:
+      type: string
+      serialized_name: streetName
+    houseNumber:
+      type: string
+      serialized_name: houseNumber
+    houseNumberExtended:
+      type: string
+      serialized_name: houseNumberExtended
+    zipCode:
+      type: string
+      serialized_name: zipCode
+    city:
+      type: string
+    countryCode:
+      type: string
+      serialized_name: countryCode
+    email:
+      type: string
+    deliveryPhoneNumber:
+      type: string
+      serialized_name: deliveryPhoneNumber
+    company:
+      type: string

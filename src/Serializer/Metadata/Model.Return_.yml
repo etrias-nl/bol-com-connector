@@ -1,0 +1,31 @@
+Etrias\BolComConnector\Model\Return_:
+  access_type: public_method
+  exclusion_policy: ALL
+  properties:
+    rmaId:
+      type: string
+      serialized_name: rmaId
+    orderId:
+      type: string
+      serialized_name: orderId
+    ean:
+      type: string
+    quantity:
+      type: int
+    registeredAt:
+      type: DateTime<'Y-m-d\TH:i:sP'>
+      serialized_name: registrationDateTime
+    reason:
+      type: string
+      serialized_name: returnReason
+    reasonComments:
+      type: string
+      serialized_name: returnReasonComments
+    fulfilmentMethod:
+      type: string
+      serialized_name: fulfilmentMethod
+    handled:
+      type: bool
+    trackAndTrace:
+      type: string
+      serialized_name: trackAndTrace

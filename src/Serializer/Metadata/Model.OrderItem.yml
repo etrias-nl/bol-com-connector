@@ -1,0 +1,14 @@
+Etrias\BolComConnector\Model\OrderItem:
+  access_type: public_method
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: string
+      serialized_name: orderItemId
+    ean:
+      type: string
+    cancelRequest:
+      type: bool
+      serialized_name: cancelRequest
+    quantity:
+      type: int

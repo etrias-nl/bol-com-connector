@@ -1,0 +1,7 @@
+Etrias\BolComConnector\Model\ProcessStatusListRequest:
+  access_type: public_method
+  exclusion_policy: ALL
+  virtual_properties:
+    getQueries:
+      type: array
+      serialized_name: processStatusQueries

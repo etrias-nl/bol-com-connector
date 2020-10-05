@@ -1,0 +1,10 @@
+Etrias\BolComConnector\Model\HandleReturnRequest:
+  access_type: public_method
+  exclusion_policy: ALL
+  properties:
+    handlingResult:
+      type: string
+      serialized_name: handlingResult
+    quantityReturned:
+      type: string
+      serialized_name: quantityReturned

@@ -23,7 +23,7 @@ class Authentication extends OAuth2Handler implements Plugin
         $promise = $next($request);
 
         return $promise->then(function (ResponseInterface $response) use ($request, $first) {
-            if ($response->getStatusCode() !== 401 || $request->hasHeader('X-Guzzle-Retry')) {
+            if (401 !== $response->getStatusCode() || $request->hasHeader('X-Guzzle-Retry')) {
                 return $response;
             }
 

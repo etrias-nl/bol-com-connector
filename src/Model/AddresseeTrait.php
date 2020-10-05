@@ -135,7 +135,7 @@ trait AddresseeTrait
     public function setEmail(?string $email): self
     {
         $this->email = $email;
-        
+
         return $this;
     }
 

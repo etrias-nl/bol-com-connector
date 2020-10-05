@@ -17,7 +17,7 @@ class ReturnApi extends AbstractApi
     /**
      * @return Return_[]
      */
-    public function all(ReturnsRequest $request = null)
+    public function all(?ReturnsRequest $request = null)
     {
         if (null === $request) {
             $request = new ReturnsRequest();

@@ -19,7 +19,7 @@ class OrderApi extends AbstractApi
     /**
      * @return Order[]
      */
-    public function all(OrdersRequest $request = null)
+    public function all(?OrdersRequest $request = null)
     {
         if (null === $request) {
             $request = new OrdersRequest();

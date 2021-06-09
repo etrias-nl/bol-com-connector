@@ -1,13 +1,13 @@
 Etrias\BolComConnector\Model\Order:
-  access_type: public_method
-  exclusion_policy: ALL
-  properties:
-    id:
-      type: string
-      serialized_name: orderId
-    placedAt:
-      type: DateTime<'Y-m-d\TH:i:sP'>
-      serialized_name: dateTimeOrderPlaced
-    items:
-      type: array<Etrias\BolComConnector\Model\OrderItem>
-      serialized_name: orderItems
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        id:
+            type: string
+            serialized_name: orderId
+        placedAt:
+            type: DateTime<'Y-m-d\TH:i:sP'>
+            serialized_name: orderPlacedDateTime
+        items:
+            type: array<Etrias\BolComConnector\Model\OrderItem>
+            serialized_name: orderItems

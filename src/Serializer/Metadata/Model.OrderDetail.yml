@@ -1,16 +1,19 @@
 Etrias\BolComConnector\Model\OrderDetail:
-  access_type: public_method
-  exclusion_policy: ALL
-  properties:
-    id:
-      type: string
-      serialized_name: orderId
-    placedAt:
-      type: DateTime<'Y-m-d\TH:i:sP'>
-      serialized_name: dateTimeOrderPlaced
-    customerDetails:
-      type: Etrias\BolComConnector\Model\CustomerDetails
-      serialized_name: customerDetails
-    items:
-      type: array<Etrias\BolComConnector\Model\OrderItemDetail>
-      serialized_name: orderItems
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        id:
+            type: string
+            serialized_name: orderId
+        placedAt:
+            type: DateTime<'Y-m-d\TH:i:sP'>
+            serialized_name: orderPlacedDateTime
+        shipmentDetails:
+            type: Etrias\BolComConnector\Model\ShipmentDetails
+            serialized_name: shipmentDetails
+        billingDetails:
+            type: Etrias\BolComConnector\Model\BillingDetails
+            serialized_name: billingDetails
+        items:
+            type: array<Etrias\BolComConnector\Model\OrderItemDetail>
+            serialized_name: orderItems

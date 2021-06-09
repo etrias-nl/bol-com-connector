@@ -1,0 +1,10 @@
+Etrias\BolComConnector\Model\Product:
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        ean:
+            type: string
+            serialized_name: ean
+        title:
+            type: string
+            serialized_name: title

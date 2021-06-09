@@ -4,22 +4,9 @@ declare(strict_types=1);
 
 namespace Etrias\BolComConnector\Model;
 
-trait OrderItemTrait
+class ReturnItemProcessingResult
 {
-    protected ?string $id = null;
     protected ?int $quantity = null;
-
-    public function getId(): ?string
-    {
-        return $this->id;
-    }
-
-    public function setId(?string $id): self
-    {
-        $this->id = $id;
-
-        return $this;
-    }
 
     public function getQuantity(): ?int
     {

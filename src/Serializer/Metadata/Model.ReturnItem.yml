@@ -1,0 +1,23 @@
+Etrias\BolComConnector\Model\ReturnItem:
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        rmaId:
+            type: string
+            serialized_name: rmaId
+        orderId:
+            type: string
+            serialized_name: orderId
+        ean:
+            type: string
+        reason:
+            type: Etrias\BolComConnector\Model\ReturnReason
+            serialized_name: returnReason
+        handled:
+            type: bool
+        processingResults:
+            type: array<Etrias\BolComConnector\Model\ReturnItemProcessingResult>
+            serialized_name: processingResults
+        trackAndTrace:
+            type: string
+            serialized_name: trackAndTrace

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Etrias\BolComConnector\Model;
 
-class CancelOrderItemRequest
+class CancelOrderItem
 {
     public const REASON_OUT_OF_STOCK = 'OUT_OF_STOCK';
     public const REASON_REQUESTED_BY_CUSTOMER = 'REQUESTED_BY_CUSTOMER';

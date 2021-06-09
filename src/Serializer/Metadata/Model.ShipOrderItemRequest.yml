@@ -1,6 +1,9 @@
-Etrias\BolComConnector\Model\ShipOrderItemRequest:
-  access_type: public_method
-  exclusion_policy: ALL
-  properties:
-    transport:
-      type: Etrias\BolComConnector\Model\Transport
+Etrias\BolComConnector\Model\ShipOrderItemsRequest:
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        items:
+            type: array<Etrias\BolComConnector\Model\ShipOrderItem>
+            serialized_name: orderItems
+        transport:
+            type: Etrias\BolComConnector\Model\Transport

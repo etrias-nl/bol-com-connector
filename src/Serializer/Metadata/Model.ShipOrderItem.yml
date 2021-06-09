@@ -1,11 +1,7 @@
-Etrias\BolComConnector\Model\OrderItem:
+Etrias\BolComConnector\Model\ShipOrderItem:
     access_type: public_method
     exclusion_policy: ALL
     properties:
-        id:
+        itemId:
             type: string
             serialized_name: orderItemId
-        ean:
-            type: string
-        quantity:
-            type: int

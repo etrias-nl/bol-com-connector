@@ -6,30 +6,16 @@ namespace Etrias\BolComConnector\Model;
 
 trait AddresseeTrait
 {
-    protected ?string $salutationCode = null;
     protected ?string $firstName = null;
-    protected ?string $surName = null;
+    protected ?string $surname = null;
     protected ?string $streetName = null;
     protected ?string $houseNumber = null;
-    protected ?string $houseNumberExtended = null;
+    protected ?string $houseNumberExtension = null;
     protected ?string $zipCode = null;
     protected ?string $city = null;
     protected ?string $countryCode = null;
     protected ?string $email = null;
-    protected ?string $deliveryPhoneNumber = null;
     protected ?string $company = null;
-
-    public function getSalutationCode(): ?string
-    {
-        return $this->salutationCode;
-    }
-
-    public function setSalutationCode(?string $salutationCode): self
-    {
-        $this->salutationCode = $salutationCode;
-
-        return $this;
-    }
 
     public function getFirstName(): ?string
     {
@@ -43,14 +29,14 @@ trait AddresseeTrait
         return $this;
     }
 
-    public function getSurName(): ?string
+    public function getSurname(): ?string
     {
-        return $this->surName;
+        return $this->surname;
     }
 
-    public function setSurName(?string $surName): self
+    public function setSurname(?string $surname): self
     {
-        $this->surName = $surName;
+        $this->surname = $surname;
 
         return $this;
     }
@@ -79,14 +65,14 @@ trait AddresseeTrait
         return $this;
     }
 
-    public function getHouseNumberExtended(): ?string
+    public function getHouseNumberExtension(): ?string
     {
-        return $this->houseNumberExtended;
+        return $this->houseNumberExtension;
     }
 
-    public function setHouseNumberExtended(?string $houseNumberExtended): self
+    public function setHouseNumberExtension(?string $houseNumberExtension): self
     {
-        $this->houseNumberExtended = $houseNumberExtended;
+        $this->houseNumberExtension = $houseNumberExtension;
 
         return $this;
     }
@@ -135,18 +121,6 @@ trait AddresseeTrait
     public function setEmail(?string $email): self
     {
         $this->email = $email;
-
-        return $this;
-    }
-
-    public function getDeliveryPhoneNumber(): ?string
-    {
-        return $this->deliveryPhoneNumber;
-    }
-
-    public function setDeliveryPhoneNumber(?string $deliveryPhoneNumber): self
-    {
-        $this->deliveryPhoneNumber = $deliveryPhoneNumber;
 
         return $this;
     }

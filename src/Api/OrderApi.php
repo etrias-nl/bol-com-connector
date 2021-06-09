@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace Etrias\BolComConnector\Api;
 
 use Etrias\BolComConnector\Exception\BolComException;
-use Etrias\BolComConnector\Model\CancelOrderItemRequest;
+use Etrias\BolComConnector\Model\CancelOrderItemsRequest;
 use Etrias\BolComConnector\Model\Order;
 use Etrias\BolComConnector\Model\OrderDetail;
 use Etrias\BolComConnector\Model\OrdersRequest;
 use Etrias\BolComConnector\Model\OrdersResponse;
 use Etrias\BolComConnector\Model\ProcessStatus;
-use Etrias\BolComConnector\Model\ShipOrderItemRequest;
+use Etrias\BolComConnector\Model\ShipOrderItemsRequest;
 use GuzzleHttp\Psr7\Uri;
 
 class OrderApi extends AbstractApi
@@ -27,6 +27,7 @@ class OrderApi extends AbstractApi
 
         $uri = $this->createUri('/orders', [], [
             'fulfilment-method' => $request->getFulfilmentMethod(),
+            'status' => $request->getStatus(),
         ]);
         $page = $request->getPage();
 
@@ -62,20 +63,16 @@ class OrderApi extends AbstractApi
         return $this->deserialize($this->getJson($uri), OrderDetail::class);
     }
 
-    public function cancelItem(CancelOrderItemRequest $request): ProcessStatus
+    public function cancelItems(CancelOrderItemsRequest $request): ProcessStatus
     {
-        $uri = $this->createUri('/orders/{itemId}/cancellation', [
-            'itemId' => $request->getItemId(),
-        ]);
+        $uri = $this->createUri('/orders/cancellation');
 
         return $this->deserialize($this->putJson($uri, $request), ProcessStatus::class);
     }
 
-    public function shipItem(ShipOrderItemRequest $request): ProcessStatus
+    public function shipItems(ShipOrderItemsRequest $request): ProcessStatus
     {
-        $uri = $this->createUri('/orders/{itemId}/shipment', [
-            'itemId' => $request->getItemId(),
-        ]);
+        $uri = $this->createUri('/orders/shipment');
 
         return $this->deserialize($this->putJson($uri, $request), ProcessStatus::class);
     }

@@ -1,11 +1,10 @@
-Etrias\BolComConnector\Model\OrderItem:
+Etrias\BolComConnector\Model\CancelOrderItem:
     access_type: public_method
     exclusion_policy: ALL
     properties:
-        id:
+        itemId:
             type: string
             serialized_name: orderItemId
-        ean:
+        reasonCode:
             type: string
-        quantity:
-            type: int
+            serialized_name: reasonCode

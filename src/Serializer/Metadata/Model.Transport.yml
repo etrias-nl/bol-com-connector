@@ -1,10 +1,10 @@
 Etrias\BolComConnector\Model\Transport:
-  access_type: public_method
-  exclusion_policy: ALL
-  properties:
-    transporterCode:
-      type: string
-      serialized_name: transporterCode
-    trackAndTrace:
-      type: string
-      serialized_name: trackAndTrace
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        transporterCode:
+            type: string
+            serialized_name: transporterCode
+        trackAndTrace:
+            type: string
+            serialized_name: trackAndTrace

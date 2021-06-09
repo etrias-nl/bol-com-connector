@@ -6,61 +6,38 @@ namespace Etrias\BolComConnector\Model;
 
 class Return_
 {
-    protected ?string $rmaId = null;
-    protected ?string $orderId = null;
-    protected ?string $ean = null;
-    protected ?int $quantity = null;
+    protected ?string $id = null;
+    /** @var ReturnItem[] */
+    protected array $items = [];
     protected ?\DateTimeInterface $registeredAt = null;
-    protected ?string $reason = null;
-    protected ?string $reasonComments = null;
     protected ?string $fulfilmentMethod = null;
-    protected ?bool $handled = null;
-    protected ?string $trackAndTrace = null;
 
-    public function getRmaId(): ?string
+    public function getId(): ?string
     {
-        return $this->rmaId;
+        return $this->id;
     }
 
-    public function setRmaId(?string $rmaId): self
+    public function setId(?string $id): self
     {
-        $this->rmaId = $rmaId;
+        $this->id = $id;
 
         return $this;
     }
 
-    public function getOrderId(): ?string
+    /**
+     * @return ReturnItem[]
+     */
+    public function getItems(): array
     {
-        return $this->orderId;
+        return $this->items;
     }
 
-    public function setOrderId(?string $orderId): self
+    /**
+     * @param ReturnItem[] $items
+     */
+    public function setItems(array $items): self
     {
-        $this->orderId = $orderId;
-
-        return $this;
-    }
-
-    public function getEan(): ?string
-    {
-        return $this->ean;
-    }
-
-    public function setEan(?string $ean): self
-    {
-        $this->ean = $ean;
-
-        return $this;
-    }
-
-    public function getQuantity(): ?int
-    {
-        return $this->quantity;
-    }
-
-    public function setQuantity(?int $quantity): self
-    {
-        $this->quantity = $quantity;
+        $this->items = $items;
 
         return $this;
     }
@@ -77,30 +54,6 @@ class Return_
         return $this;
     }
 
-    public function getReason(): ?string
-    {
-        return $this->reason;
-    }
-
-    public function setReason(?string $reason): self
-    {
-        $this->reason = $reason;
-
-        return $this;
-    }
-
-    public function getReasonComments(): ?string
-    {
-        return $this->reasonComments;
-    }
-
-    public function setReasonComments(?string $reasonComments): self
-    {
-        $this->reasonComments = $reasonComments;
-
-        return $this;
-    }
-
     public function getFulfilmentMethod(): ?string
     {
         return $this->fulfilmentMethod;
@@ -109,30 +62,6 @@ class Return_
     public function setFulfilmentMethod(?string $fulfilmentMethod): self
     {
         $this->fulfilmentMethod = $fulfilmentMethod;
-
-        return $this;
-    }
-
-    public function isHandled(): ?bool
-    {
-        return $this->handled;
-    }
-
-    public function setHandled(?bool $handled): self
-    {
-        $this->handled = $handled;
-
-        return $this;
-    }
-
-    public function getTrackAndTrace(): ?string
-    {
-        return $this->trackAndTrace;
-    }
-
-    public function setTrackAndTrace(?string $trackAndTrace): self
-    {
-        $this->trackAndTrace = $trackAndTrace;
 
         return $this;
     }

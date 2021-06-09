@@ -1,6 +1,6 @@
 Etrias\BolComConnector\Model\OrdersResponse:
-  access_type: public_method
-  exclusion_policy: ALL
-  properties:
-    orders:
-      type: array<Etrias\BolComConnector\Model\Order>
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        orders:
+            type: array<Etrias\BolComConnector\Model\Order>

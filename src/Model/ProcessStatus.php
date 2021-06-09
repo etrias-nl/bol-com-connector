@@ -11,15 +11,15 @@ class ProcessStatus
     public const STATUS_TIMEOUT = 'TIMEOUT';
     public const STATUS_FAILURE = 'FAILURE';
 
-    protected ?int $id = null;
+    protected ?string $id = null;
     protected ?string $status = null;
 
-    public function getId(): ?int
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    public function setId(?int $id): self
+    public function setId(?string $id): self
     {
         $this->id = $id;
 

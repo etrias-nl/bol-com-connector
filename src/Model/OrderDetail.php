@@ -8,18 +8,31 @@ class OrderDetail
 {
     use OrderTrait;
 
-    protected ?CustomerDetails $customerDetails = null;
+    protected ?ShipmentDetails $shipmentDetails = null;
+    protected ?BillingDetails $billingDetails = null;
     /** @var OrderItemDetail[] */
     protected array $items = [];
 
-    public function getCustomerDetails(): ?CustomerDetails
+    public function getShipmentDetails(): ?ShipmentDetails
     {
-        return $this->customerDetails;
+        return $this->shipmentDetails;
     }
 
-    public function setCustomerDetails(?CustomerDetails $customerDetails): self
+    public function setShipmentDetails(?ShipmentDetails $shipmentDetails): self
     {
-        $this->customerDetails = $customerDetails;
+        $this->shipmentDetails = $shipmentDetails;
+
+        return $this;
+    }
+
+    public function getBillingDetails(): ?BillingDetails
+    {
+        return $this->billingDetails;
+    }
+
+    public function setBillingDetails(?BillingDetails $billingDetails): self
+    {
+        $this->billingDetails = $billingDetails;
 
         return $this;
     }

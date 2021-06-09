@@ -8,55 +8,68 @@ class OrderItemDetail
 {
     use OrderItemTrait;
 
-    protected ?string $title = null;
-    protected ?string $offerReference = null;
-    protected ?float $offerPrice = null;
-    protected ?float $transactionFee = null;
+    protected ?OfferReference $offer = null;
+    protected ?Product $product = null;
+    protected ?float $unitPrice = null;
+    protected ?float $commission = null;
+    protected ?bool $cancellationRequest = null;
 
-    public function getTitle(): ?string
+    public function getOffer(): ?OfferReference
     {
-        return $this->title;
+        return $this->offer;
     }
 
-    public function setTitle(?string $title): self
+    public function setOffer(?OfferReference $offer): self
     {
-        $this->title = $title;
+        $this->offer = $offer;
 
         return $this;
     }
 
-    public function getOfferReference(): ?string
+    public function getProduct(): ?Product
     {
-        return $this->offerReference;
+        return $this->product;
     }
 
-    public function setOfferReference(?string $offerReference): self
+    public function setProduct(?Product $product): self
     {
-        $this->offerReference = $offerReference;
+        $this->product = $product;
 
         return $this;
     }
 
-    public function getOfferPrice(): ?float
+    public function getUnitPrice(): ?float
     {
-        return $this->offerPrice;
+        return $this->unitPrice;
     }
 
-    public function setOfferPrice(?float $offerPrice): self
+    public function setUnitPrice(?float $unitPrice): self
     {
-        $this->offerPrice = $offerPrice;
+        $this->unitPrice = $unitPrice;
 
         return $this;
     }
 
-    public function getTransactionFee(): ?float
+    public function getCommission(): ?float
     {
-        return $this->transactionFee;
+        return $this->commission;
     }
 
-    public function setTransactionFee(?float $transactionFee): self
+    public function setCommission(?float $commission): self
     {
-        $this->transactionFee = $transactionFee;
+        $this->commission = $commission;
+
+        return $this;
+    }
+
+    public function isCancellationRequest(): ?bool
+    {
+        return $this->cancellationRequest;
+    }
+
+    public function setCancellationRequest(?bool $cancellationRequest): self
+    {
+        $this->cancellationRequest = $cancellationRequest;
 
         return $this;
     }

@@ -1,0 +1,13 @@
+Etrias\BolComConnector\Model\ReturnReason:
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        mainReason:
+            type: string
+            serialized_name: mainReason
+        detailedReason:
+            type: string
+            serialized_name: detailedReason
+        customerComments:
+            type: string
+            serialized_name: customerComments

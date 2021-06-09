@@ -22,7 +22,7 @@ class ProcessStatusApi extends AbstractApi
         yield from $result->getStatuses();
     }
 
-    public function get(int $id): ProcessStatus
+    public function get(string $id): ProcessStatus
     {
         $uri = $this->createUri('/process-status/{id}', [
             'id' => $id,

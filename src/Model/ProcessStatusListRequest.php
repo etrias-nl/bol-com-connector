@@ -6,11 +6,11 @@ namespace Etrias\BolComConnector\Model;
 
 class ProcessStatusListRequest
 {
-    /** @var int[] */
+    /** @var string[] */
     protected array $ids = [];
 
     /**
-     * @return int[]
+     * @return string[]
      */
     public function getIds(): array
     {
@@ -18,7 +18,7 @@ class ProcessStatusListRequest
     }
 
     /**
-     * @param int[] $ids
+     * @param string[] $ids
      */
     public function setIds(array $ids): self
     {
@@ -30,7 +30,7 @@ class ProcessStatusListRequest
     public function getQueries(): array
     {
         return array_map(function (int $id): array {
-            return ['id' => $id];
+            return ['processStatusId' => $id];
         }, $this->ids);
     }
 }

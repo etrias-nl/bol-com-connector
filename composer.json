@@ -20,7 +20,7 @@
         "friendsofphp/php-cs-fixer": "@stable",
         "nyholm/psr7": "^1.2",
         "php-http/guzzle6-adapter": "^2.0",
-        "phpunit/phpunit": "~8.5",
+        "phpunit/phpunit": "~9.5",
         "symfony/yaml": "^5.0",
         "overtrue/phplint": "@stable"
     },

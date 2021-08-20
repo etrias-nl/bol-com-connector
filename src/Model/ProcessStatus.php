@@ -13,6 +13,9 @@ class ProcessStatus
 
     protected ?string $id = null;
     protected ?string $status = null;
+    protected ?string $eventType = null;
+    protected ?string $description = null;
+    protected ?string $errorMessage = null;
 
     public function getId(): ?string
     {
@@ -34,6 +37,42 @@ class ProcessStatus
     public function setStatus(?string $status): self
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    public function getEventType(): ?string
+    {
+        return $this->eventType;
+    }
+
+    public function setEventType(?string $eventType): ProcessStatus
+    {
+        $this->eventType = $eventType;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): ProcessStatus
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getErrorMessage(): ?string
+    {
+        return $this->errorMessage;
+    }
+
+    public function setErrorMessage(?string $errorMessage): ProcessStatus
+    {
+        $this->errorMessage = $errorMessage;
 
         return $this;
     }

@@ -7,3 +7,11 @@ Etrias\BolComConnector\Model\ProcessStatus:
             serialized_name: processStatusId
         status:
             type: string
+        eventType:
+            type: string
+            serialized_name: eventType
+        description:
+            type: string
+        errorMessage:
+            type: string
+            serialized_name: errorMessage

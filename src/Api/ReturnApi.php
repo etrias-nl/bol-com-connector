@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Etrias\BolComConnector\Api;
 
 use Etrias\BolComConnector\Exception\BolComException;
+use Etrias\BolComConnector\Model\CreateReturnRequest;
 use Etrias\BolComConnector\Model\HandleReturnRequest;
 use Etrias\BolComConnector\Model\ProcessStatus;
 use Etrias\BolComConnector\Model\Return_;
@@ -59,5 +60,12 @@ class ReturnApi extends AbstractApi
         ]);
 
         return $this->deserialize($this->putJson($uri, $request), ProcessStatus::class);
+    }
+
+    public function createReturn(CreateReturnRequest $request): ProcessStatus
+    {
+        $uri = $this->createUri('/returns');
+
+        return $this->deserialize($this->postJson($uri, $request), ProcessStatus::class);
     }
 }

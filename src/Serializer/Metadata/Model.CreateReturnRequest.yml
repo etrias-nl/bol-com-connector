@@ -1,0 +1,13 @@
+Etrias\BolComConnector\Model\CreateReturnRequest:
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        orderItemId:
+            type: string
+            serialized_name: orderItemId
+        quantityReturned:
+            type: integer
+            serialized_name: quantityReturned
+        handlingResult:
+            type: string
+            serialized_name: handlingResult

@@ -9,3 +9,9 @@ Etrias\BolComConnector\Model\OrderItem:
             type: string
         quantity:
             type: int
+        quantityShipped:
+            type: int
+            serialized_name: quantityShipped
+        quantityCancelled:
+            type: int
+            serialized_name: quantityCancelled

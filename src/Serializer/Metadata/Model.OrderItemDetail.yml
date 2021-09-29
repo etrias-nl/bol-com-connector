@@ -10,6 +10,12 @@ Etrias\BolComConnector\Model\OrderItemDetail:
             serialized_name: cancellationRequest
         quantity:
             type: int
+        quantityShipped:
+            type: int
+            serialized_name: quantityShipped
+        quantityCancelled:
+            type: int
+            serialized_name: quantityCancelled
         offer:
             type: Etrias\BolComConnector\Model\OfferReference
             serialized_name: offer

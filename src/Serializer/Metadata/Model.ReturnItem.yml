@@ -10,6 +10,8 @@ Etrias\BolComConnector\Model\ReturnItem:
             serialized_name: orderId
         ean:
             type: string
+        quantity:
+            type: int
         reason:
             type: Etrias\BolComConnector\Model\ReturnReason
             serialized_name: returnReason

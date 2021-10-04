@@ -9,6 +9,7 @@ class ReturnItem
     protected ?string $rmaId = null;
     protected ?string $orderId = null;
     protected ?string $ean = null;
+    protected ?int $quantity = null;
     protected ?ReturnReason $reason = null;
     protected ?bool $handled = null;
     /** @var ReturnItemProcessingResult[] */

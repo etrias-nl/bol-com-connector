@@ -9,7 +9,7 @@ class ReturnItem
     protected ?string $rmaId = null;
     protected ?string $orderId = null;
     protected ?string $ean = null;
-    protected ?int $quantity = null;
+    protected ?int $expectedQuantity = null;
     protected ?ReturnReason $reason = null;
     protected ?bool $handled = null;
     /** @var ReturnItemProcessingResult[] */
@@ -52,14 +52,14 @@ class ReturnItem
         return $this;
     }
 
-    public function getQuantity(): ?int
+    public function getExpectedQuantity(): ?int
     {
-        return $this->quantity;
+        return $this->expectedQuantity;
     }
 
-    public function setQuantity(?int $quantity): self
+    public function setExpectedQuantity(?int $expectedQuantity): self
     {
-        $this->quantity = $quantity;
+        $this->expectedQuantity = $expectedQuantity;
 
         return $this;
     }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Etrias\BolComConnector\Api;
 
-use Etrias\BolComConnector\Exception\BolComException;
 use Etrias\BolComConnector\Model\CreateReturnRequest;
 use Etrias\BolComConnector\Model\HandleReturnRequest;
 use Etrias\BolComConnector\Model\ProcessStatus;
@@ -33,11 +32,7 @@ class ReturnApi extends AbstractApi
         do {
             $uri = Uri::withQueryValue($uri, 'page', $page);
 
-            try {
-                $response = $this->getJson($uri);
-            } catch (BolComException $e) {
-                break;
-            }
+            $response = $this->getJson($uri);
 
             /** @var ReturnsResponse $result */
             $result = $this->deserialize($response, ReturnsResponse::class);

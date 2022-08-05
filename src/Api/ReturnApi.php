@@ -48,6 +48,15 @@ class ReturnApi extends AbstractApi
         } while (true);
     }
 
+    public function get(string $returnId): Return_
+    {
+        $uri = $this->createUri('/returns/{returnId}', [
+            'returnId' => $returnId,
+        ]);
+
+        return $this->deserialize($this->getJson($uri), Return_::class);
+    }
+
     public function handle(HandleReturnRequest $request): ProcessStatus
     {
         $uri = $this->createUri('/returns/{rmaId}', [

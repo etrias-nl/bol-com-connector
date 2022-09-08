@@ -50,6 +50,11 @@ abstract class AbstractApi
         return $this->client->get($uri);
     }
 
+    protected function deleteJson(UriInterface $uri): ResponseInterface
+    {
+        return $this->client->delete($uri);
+    }
+
     protected function deserialize(ResponseInterface $response, string $type): object
     {
         return $this->serializer->deserialize((string) $response->getBody(), $type, self::JSON_FORMAT);

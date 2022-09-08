@@ -2,6 +2,9 @@ Etrias\BolComConnector\Model\CreateOfferRequest:
     access_type: public_method
     exclusion_policy: ALL
     properties:
+        offerId:
+            type: string
+            serialized_name: offerId
         ean:
             type: string
             serialized_name: ean

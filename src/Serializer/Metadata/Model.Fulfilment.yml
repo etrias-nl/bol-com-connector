@@ -1,0 +1,10 @@
+Etrias\BolComConnector\Model\Fulfilment:
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        method:
+            type: string
+            serialized_name: method
+        deliveryCode:
+            type: string
+            serialized_name: deliveryCode

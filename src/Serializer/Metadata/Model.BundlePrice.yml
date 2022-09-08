@@ -1,0 +1,10 @@
+Etrias\BolComConnector\Model\BundlePrice:
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        quantity:
+            type: int
+            serialized_name: quantity
+        unitPrice:
+            type: float
+            serialized_name: unitPrice

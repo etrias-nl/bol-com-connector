@@ -1,0 +1,7 @@
+Etrias\BolComConnector\Model\Pricing:
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        bundlePrices:
+            type: array<Etrias\BolComConnector\Model\BundlePrice>
+            serialized_name: bundlePrices

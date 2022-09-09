@@ -19,6 +19,30 @@ class OfferApi extends AbstractApi
         return $this->deserialize($this->postJson($uri, $request), ProcessStatus::class);
     }
 
+    /**
+     * @return array[]
+     */
+    public function getExport(string $id): array
+    {
+        $uri = $this->createUri('/offers/export/{id}', [
+            'id' => $id,
+        ]);
+        $response = $this->client->get($uri, [
+            'Content-Type' => 'application/vnd.retailer.v5+csv',
+            'Accept' => 'application/vnd.retailer.v5+csv',
+            'Connection' => 'keep-alive',
+            'Keep-Alive' => 'timeout=1800',
+        ]);
+
+        $lines = explode("\r\n", (string) $response->getBody());
+        $columns = str_getcsv(array_shift($lines));
+        $defaults = array_fill(0, count($columns), null);
+
+        return array_map(function (string $line) use ($columns, $defaults): array {
+            return array_combine($columns, str_getcsv($line) + $defaults);
+        }, $lines);
+    }
+
     public function create(CreateOfferRequest $request): ProcessStatus
     {
         $uri = $this->createUri('/offers');

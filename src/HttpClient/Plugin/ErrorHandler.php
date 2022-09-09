@@ -17,10 +17,15 @@ class ErrorHandler implements Plugin
      */
     public function handleRequest(RequestInterface $request, callable $next, callable $first): Promise
     {
-        return $next($request)->then(function (ResponseInterface $response) {
+        return $next($request)->then(function (ResponseInterface $response) use ($request, $next, $first) {
             $status = $response->getStatusCode();
 
-            if ($status >= 400) {
+            if (429 === $status) {
+                $retryAfter = (int) ($response->getHeader('retry-after')[0] ?? 60);
+                sleep($retryAfter);
+
+                return $this->handleRequest($request, $next, $first)->wait();
+            } elseif ($status >= 400) {
                 $body = (string) $response->getBody();
 
                 if (!preg_match('/\bjson\b/i', $response->getHeaderLine('Content-Type'))) {

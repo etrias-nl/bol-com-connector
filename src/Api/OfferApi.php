@@ -31,7 +31,7 @@ class OfferApi extends AbstractApi
             'Content-Type' => 'application/vnd.retailer.v5+csv',
             'Accept' => 'application/vnd.retailer.v5+csv',
             'Connection' => 'keep-alive',
-            'Keep-Alive' => 'timeout=1800',
+            'Keep-Alive' => 'timeout=3600',
         ]);
 
         $lines = explode("\r\n", (string) $response->getBody());

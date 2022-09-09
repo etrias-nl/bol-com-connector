@@ -12,6 +12,7 @@ class ProcessStatus
     public const STATUS_FAILURE = 'FAILURE';
 
     protected ?string $id = null;
+    protected ?string $entityId = null;
     protected ?string $status = null;
     protected ?string $eventType = null;
     protected ?string $description = null;
@@ -25,6 +26,19 @@ class ProcessStatus
     public function setId(?string $id): self
     {
         $this->id = $id;
+
+        return $this;
+    }
+
+    public function getEntityId(): ?string
+    {
+        return $this->entityId;
+    }
+
+    public function setEntityId(?string $entityId): self
+    {
+
+        $this->entityId = $entityId;
 
         return $this;
     }

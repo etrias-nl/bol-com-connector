@@ -5,6 +5,9 @@ Etrias\BolComConnector\Model\ProcessStatus:
         id:
             type: string
             serialized_name: processStatusId
+        entityId:
+            type: string
+            serialized_name: entityId
         status:
             type: string
         eventType:

@@ -1,0 +1,7 @@
+Etrias\BolComConnector\Model\ExportOffersRequest:
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        format:
+            type: string
+            serialized_name: format

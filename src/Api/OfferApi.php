@@ -28,10 +28,8 @@ class OfferApi extends AbstractApi
             'id' => $id,
         ]);
         $response = $this->client->get($uri, [
-            'Content-Type' => 'application/vnd.retailer.v5+csv',
-            'Accept' => 'application/vnd.retailer.v5+csv',
-            'Connection' => 'keep-alive',
-            'Keep-Alive' => 'timeout=3600',
+            'Content-Type' => 'application/vnd.retailer.v7+csv',
+            'Accept' => 'application/vnd.retailer.v7+csv',
         ]);
 
         $lines = explode("\r\n", (string) $response->getBody());

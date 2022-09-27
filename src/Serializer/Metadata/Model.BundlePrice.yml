@@ -6,5 +6,5 @@ Etrias\BolComConnector\Model\BundlePrice:
             type: int
             serialized_name: quantity
         unitPrice:
-            type: float
+            type: string # numeric
             serialized_name: unitPrice

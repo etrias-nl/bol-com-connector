@@ -7,7 +7,8 @@ namespace Etrias\BolComConnector\Model;
 class BundlePrice
 {
     protected ?int $quantity = null;
-    protected ?float $unitPrice = null;
+    /** @var numeric|null */
+    protected $unitPrice = null;
 
     public function getQuantity(): ?int
     {
@@ -21,12 +22,18 @@ class BundlePrice
         return $this;
     }
 
-    public function getUnitPrice(): ?float
+    /**
+     * @return numeric|null
+     */
+    public function getUnitPrice()
     {
         return $this->unitPrice;
     }
 
-    public function setUnitPrice(?float $unitPrice): self
+    /**
+     * @param numeric|null $unitPrice
+     */
+    public function setUnitPrice($unitPrice): self
     {
         $this->unitPrice = $unitPrice;
 

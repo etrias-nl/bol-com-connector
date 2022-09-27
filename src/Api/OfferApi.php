@@ -35,7 +35,7 @@ class OfferApi extends AbstractApi
             'Accept' => 'application/vnd.retailer.v7+csv',
         ]);
 
-        $lines = explode("\r\n", (string) $response->getBody());
+        $lines = explode("\r\n", trim((string) $response->getBody()));
         $columns = str_getcsv(array_shift($lines));
         $defaults = array_fill(0, count($columns), null);
 

@@ -6,5 +6,5 @@ namespace Etrias\BolComConnector\Exception;
 
 class BolComException extends \RuntimeException
 {
-  public const RATE_LIMIT_CODE = 429;
+    public const RATE_LIMIT_CODE = 429;
 }

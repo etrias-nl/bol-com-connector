@@ -8,6 +8,8 @@ use Etrias\BolComConnector\Model\CreateOfferRequest;
 use Etrias\BolComConnector\Model\ExportOffersRequest;
 use Etrias\BolComConnector\Model\Offer;
 use Etrias\BolComConnector\Model\ProcessStatus;
+use Etrias\BolComConnector\Model\UpdateOfferPriceRequest;
+use Etrias\BolComConnector\Model\UpdateOfferStockRequest;
 
 class OfferApi extends AbstractApi
 {
@@ -64,5 +66,23 @@ class OfferApi extends AbstractApi
         ]);
 
         return $this->deserialize($this->getJson($uri), Offer::class);
+    }
+
+    public function updatePrice(string $id, UpdateOfferPriceRequest $request): ProcessStatus
+    {
+        $uri = $this->createUri('/offers/{id}/price', [
+            'id' => $id,
+        ]);
+
+        return $this->deserialize($this->putJson($uri, $request), ProcessStatus::class);
+    }
+
+    public function updateStock(string $id, UpdateOfferStockRequest $request): ProcessStatus
+    {
+        $uri = $this->createUri('/offers/{id}/stock', [
+            'id' => $id,
+        ]);
+
+        return $this->deserialize($this->putJson($uri, $request), ProcessStatus::class);
     }
 }

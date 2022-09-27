@@ -1,0 +1,7 @@
+Etrias\BolComConnector\Model\UpdateOfferPriceRequest:
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        pricing:
+            type: Etrias\BolComConnector\Model\Pricing
+            serialized_name: pricing

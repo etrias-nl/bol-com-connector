@@ -1,0 +1,10 @@
+Etrias\BolComConnector\Model\UpdateOfferStockRequest:
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        amount:
+            type: int
+            serialized_name: amount
+        managedByRetailer:
+            type: bool
+            serialized_name: managedByRetailer

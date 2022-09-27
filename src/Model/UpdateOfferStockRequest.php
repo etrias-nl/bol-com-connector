@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Etrias\BolComConnector\Model;
 
-class Stock
+class UpdateOfferStockRequest
 {
     use StockTrait;
 }

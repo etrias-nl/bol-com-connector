@@ -1,0 +1,16 @@
+Etrias\BolComConnector\Model\UpdateOfferRequest:
+    access_type: public_method
+    exclusion_policy: ALL
+    properties:
+        reference:
+            type: string
+            serialized_name: reference
+        onHoldByRetailer:
+            type: bool
+            serialized_name: onHoldByRetailer
+        unknownProductTitle:
+            type: string
+            serialized_name: unknownProductTitle
+        fulfilment:
+            type: Etrias\BolComConnector\Model\Fulfilment
+            serialized_name: fulfilment

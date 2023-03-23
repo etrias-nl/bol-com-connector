@@ -10,6 +10,7 @@ trait OrderItemTrait
     protected ?int $quantity = null;
     protected ?int $quantityShipped = null;
     protected ?int $quantityCancelled = null;
+    protected ?bool $cancellationRequest = null;
 
     public function getId(): ?string
     {
@@ -55,6 +56,18 @@ trait OrderItemTrait
     public function setQuantityCancelled(?int $quantityCancelled): self
     {
         $this->quantityCancelled = $quantityCancelled;
+
+        return $this;
+    }
+
+    public function isCancellationRequest(): ?bool
+    {
+        return $this->cancellationRequest;
+    }
+
+    public function setCancellationRequest(?bool $cancellationRequest): self
+    {
+        $this->cancellationRequest = $cancellationRequest;
 
         return $this;
     }

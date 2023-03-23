@@ -12,7 +12,6 @@ class OrderItemDetail
     protected ?Product $product = null;
     protected ?float $unitPrice = null;
     protected ?float $commission = null;
-    protected ?bool $cancellationRequest = null;
 
     public function getOffer(): ?OfferReference
     {
@@ -58,18 +57,6 @@ class OrderItemDetail
     public function setCommission(?float $commission): self
     {
         $this->commission = $commission;
-
-        return $this;
-    }
-
-    public function isCancellationRequest(): ?bool
-    {
-        return $this->cancellationRequest;
-    }
-
-    public function setCancellationRequest(?bool $cancellationRequest): self
-    {
-        $this->cancellationRequest = $cancellationRequest;
 
         return $this;
     }

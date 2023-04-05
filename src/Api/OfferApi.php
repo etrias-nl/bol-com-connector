@@ -30,7 +30,10 @@ class OfferApi extends AbstractApi
         $uri = $this->createUri('/offers/export/{id}', [
             'id' => $id,
         ]);
-        $response = $this->client->get($uri);
+        $response = $this->client->get($uri, [
+            'Content-Type' => 'application/vnd.retailer.v8+csv',
+            'Accept' => 'application/vnd.retailer.v8+csv',
+        ]);
 
         $lines = explode("\r\n", trim((string) $response->getBody()));
         $columns = str_getcsv(array_shift($lines));

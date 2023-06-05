@@ -2,12 +2,6 @@
     "name": "etrias/bol-com-connector",
     "description": "Bol.com connector",
     "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "Roland Franssen",
-            "email": "roland@etrias.nl"
-        }
-    ],
     "require": {
         "php": "^7.4",
         "jms/serializer": "^3.1",
@@ -15,35 +9,9 @@
         "php-http/discovery": "^1.6",
         "kamermans/guzzle-oauth2-subscriber": "^1.0"
     },
-    "require-dev": {
-        "friendsofphp/php-cs-fixer": "@stable",
-        "nyholm/psr7": "^1.2",
-        "php-http/guzzle6-adapter": "^2.0",
-        "phpunit/phpunit": "~9.5",
-        "symfony/yaml": "^5.0",
-        "overtrue/phplint": "@stable"
-    },
     "autoload": {
         "psr-4": {
             "Etrias\\BolComConnector\\": "src/"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\Etrias\\BolComConnector\\": "tests/"
-        }
-    },
-    "scripts": {
-        "cs-check": "vendor/bin/php-cs-fixer fix --ansi --dry-run",
-        "cs-fix": "vendor/bin/php-cs-fixer fix --ansi",
-        "lint": [
-            "@composer validate --ansi",
-            "vendor/bin/phplint . --exclude=vendor"
-        ],
-        "test": [
-            "@lint",
-            "@cs-check",
-            "vendor/bin/phpunit"
-        ]
     }
 }

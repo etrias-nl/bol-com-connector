@@ -5,7 +5,7 @@
     "require": {
         "php": "^7.4 || ^8.1",
         "jms/serializer": "^3.1",
-        "kamermans/guzzle-oauth2-subscriber": "^1.0",
+        "kamermans/guzzle-oauth2-subscriber": "^1.0.13",
         "php-http/client-common": "^2.0",
         "php-http/discovery": "^1.6"
     },

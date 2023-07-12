@@ -7,7 +7,7 @@
         "jms/serializer": "^3.1",
         "kamermans/guzzle-oauth2-subscriber": "^1.0",
         "php-http/client-common": "^2.0",
-        "php-http/discovery": "^1.6"
+        "php-http/discovery": "^1.19.1"
     },
     "autoload": {
         "psr-4": {

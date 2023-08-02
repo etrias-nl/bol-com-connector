@@ -33,7 +33,7 @@ class ErrorHandler implements Plugin
                 }
 
                 try {
-                    $data = \GuzzleHttp\json_decode($body, true);
+                    $data = json_decode($body, true, 512, JSON_THROW_ON_ERROR);
                 } catch (\Throwable $e) {
                     $data = [];
                 }

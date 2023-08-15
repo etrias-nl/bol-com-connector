@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Etrias\BolComConnector\Api;
 
 use GuzzleHttp\Psr7\Uri;
+use GuzzleHttp\UriTemplate\UriTemplate;
 use Http\Client\Common\HttpMethodsClientInterface;
 use Http\Discovery\Psr17FactoryDiscovery;
 use JMS\Serializer\SerializerInterface;
@@ -77,6 +78,6 @@ abstract class AbstractApi
             }
         }
 
-        return Uri::withQueryValues($this->uriFactory->createUri(\GuzzleHttp\uri_template($template, $variables)), $query);
+        return Uri::withQueryValues($this->uriFactory->createUri(UriTemplate::expand($template, $variables)), $query);
     }
 }

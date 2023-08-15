@@ -30,7 +30,7 @@ class ReturnApi extends AbstractApi
         $page = $request->getPage();
 
         do {
-            $uri = Uri::withQueryValue($uri, 'page', $page);
+            $uri = Uri::withQueryValue($uri, 'page', (string) $page);
 
             $response = $this->getJson($uri);
 

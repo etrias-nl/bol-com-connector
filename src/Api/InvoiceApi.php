@@ -15,7 +15,7 @@ class InvoiceApi extends AbstractApi
 
         $response = $this->getJson($uri);
 
-        return $response->getBody()->getContents();
+        return (string)$response->getBody();
     }
 
     public function getSpecification(string $invoiceId): string
@@ -29,6 +29,6 @@ class InvoiceApi extends AbstractApi
             'Accept' => 'application/vnd.retailer.v9+openxmlformats-officedocument.spreadsheetml.sheet',
         ]);
 
-        return $response->getBody()->getContents();
+        return (string)$response->getBody();
     }
 }

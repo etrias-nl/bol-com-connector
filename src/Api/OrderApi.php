@@ -69,11 +69,4 @@ class OrderApi extends AbstractApi
 
         return $this->deserialize($this->putJson($uri, $request), ProcessStatus::class);
     }
-
-    public function shipItems(ShipOrderItemsRequest $request): ProcessStatus
-    {
-        $uri = $this->createUri('/orders/shipment');
-
-        return $this->deserialize($this->putJson($uri, $request), ProcessStatus::class);
-    }
 }

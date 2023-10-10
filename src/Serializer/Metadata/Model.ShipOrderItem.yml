@@ -5,3 +5,6 @@ Etrias\BolComConnector\Model\ShipOrderItem:
         itemId:
             type: string
             serialized_name: orderItemId
+        quantity:
+            type: integer
+            serialized_name: quantity

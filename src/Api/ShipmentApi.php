@@ -6,6 +6,7 @@ namespace Etrias\BolComConnector\Api;
 
 use Etrias\BolComConnector\Model\ProcessStatus;
 use Etrias\BolComConnector\Model\ShipOrderItemsRequest;
+use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Uri;
 
 class ShipmentApi extends AbstractApi
@@ -17,7 +18,7 @@ class ShipmentApi extends AbstractApi
         return $this->deserialize($this->putJson($uri, $request), ProcessStatus::class);
     }
 
-    public function getShipment(string $shipmentId): string
+    public function getShipment(string $shipmentId): array
     {
         $uri = $this->createUri('/shipments/{id}', [
             'id' => $shipmentId,
@@ -25,10 +26,10 @@ class ShipmentApi extends AbstractApi
 
         $response = $this->getJson($uri);
 
-        return (string)$response->getBody();
+        return json_decode((string)$response->getBody(), true, 512, \JSON_THROW_ON_ERROR);
     }
 
-    public function getInvoiceRequests(string $state, int $page): string
+    public function getInvoiceRequests(string $state, int $page): array
     {
         $uri = $this->createUri('/shipments/invoices/requests', [], [
             'state' => $state,
@@ -37,35 +38,28 @@ class ShipmentApi extends AbstractApi
 
         $response = $this->getJson($uri);
 
-        return (string)$response->getBody();
+        return json_decode((string)$response->getBody(), true, 512, \JSON_THROW_ON_ERROR);
     }
 
-    public function uploadInvoice(string $shipmentId, string $data): string
+    public function uploadInvoice(string $shipmentId, string $pdfContents): array
     {
         $uri = $this->createUri('/shipments/invoices/{id}', [
             'id' => $shipmentId,
         ]);
-
-        $response = $this->client->post(
-            $uri,
+        $body = new MultipartStream([
             [
+                'name' => 'invoice',
+                'contents' => $pdfContents,
+                'filename' => 'invoice.pdf',
                 'headers' => [
-                    'Accept' => 'application/vnd.retailer.V10+json',
-                    'Content-Type' => 'multipart/form-data',
+                    'Content-Type' => 'application/pdf',
                 ],
-                'multipart' => [
-                    [
-                        'name'     => 'invoice',
-                        'contents' => $data,
-                        'filename' => 'invoice.pdf',
-                        'headers'  => [
-                            'Content-Type' => 'application/pdf'
-                        ],
-                    ]
-                ],
-            ]
-        );
+            ],
+        ]);
+        $response = $this->client->post($uri, [
+            'Content-Type' => 'multipart/form-data;boundary='.$body->getBoundary(),
+        ], $body);
 
-        return (string)$response->getBody();
+        return json_decode((string)$response->getBody(), true, 512, \JSON_THROW_ON_ERROR);
     }
 }

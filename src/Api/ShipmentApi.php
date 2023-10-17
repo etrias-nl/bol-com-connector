@@ -49,12 +49,15 @@ class ShipmentApi extends AbstractApi
         $response = $this->client->post(
             $uri,
             [
+                'headers' => [
+                    'Content-Type' => 'multipart/form-data',
+                ],
                 'multipart' => [
                     [
                         'name'     => 'invoice',
                         'contents' => $data,
                     ]
-                ]
+                ],
             ]
         );
 

@@ -50,6 +50,7 @@ class ShipmentApi extends AbstractApi
             $uri,
             [
                 'headers' => [
+                    'Accept' => 'application/vnd.retailer.V10+json',
                     'Content-Type' => 'multipart/form-data',
                 ],
                 'multipart' => [

@@ -46,7 +46,17 @@ class ShipmentApi extends AbstractApi
             'id' => $shipmentId,
         ]);
 
-        $response = $this->postJson($uri, $data);
+        $response = $this->client->post(
+            $uri,
+            [
+                'multipart' => [
+                    [
+                        'name'     => 'invoice',
+                        'contents' => $data,
+                    ]
+                ]
+            ]
+        );
 
         return (string)$response->getBody();
     }

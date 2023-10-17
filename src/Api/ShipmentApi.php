@@ -57,6 +57,10 @@ class ShipmentApi extends AbstractApi
                     [
                         'name'     => 'invoice',
                         'contents' => $data,
+                        'filename' => 'invoice.pdf',
+                        'headers'  => [
+                            'Content-Type' => 'application/pdf'
+                        ],
                     ]
                 ],
             ]

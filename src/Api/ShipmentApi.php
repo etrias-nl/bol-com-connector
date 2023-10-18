@@ -15,7 +15,7 @@ class ShipmentApi extends AbstractApi
     {
         $uri = $this->createUri('/shipments');
 
-        return $this->deserialize($this->putJson($uri, $request), ProcessStatus::class);
+        return $this->deserialize($this->postJson($uri, $request), ProcessStatus::class);
     }
 
     public function getShipment(string $shipmentId): array
